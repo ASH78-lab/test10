@@ -586,7 +586,7 @@ def pin_all():
     
     wer = gc.open("Test789").sheet1
   
-    list_of_lists = wks2.get_all_values()
+    list_of_lists = wer.get_all_values()
     df5 = pd.DataFrame(list_of_lists)
     new_header = df5.iloc[0]
     df5 = df5[1:]
