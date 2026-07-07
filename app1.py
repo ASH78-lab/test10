@@ -593,7 +593,7 @@ def pin_all():
     df5.rename(columns=new_header, inplace=True)
     df7=pd.concat([df5,df])
   
-    wer.update([df7columns.values.tolist()]+df7.values.tolist())
+    wer.update([df7.columns.values.tolist()]+df7.values.tolist())
     
     wks2 = gc.open("Test789").get_worksheet(1)
     list_of_lists = wks2.get_all_values()
