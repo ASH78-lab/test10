@@ -562,7 +562,7 @@ def pin_all():
      'A',
      'Столбец11']
     df = pd.DataFrame(data, columns=header)
-    df = df.loc[df['1'] != '-']
+    df = df.loc[df['H'] != '-']
     print(df)
     driver.quit()
     date_new533 = str(datetime.now())
