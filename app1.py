@@ -563,6 +563,14 @@ def pin_all():
      'Столбец11']
     df = pd.DataFrame(data, columns=header)
     df = df.loc[df['H'] != '-']
+  
+    df.loc[df['X'] == '-', 'X'] = 15
+    df.loc[(df['1'] == '-') & (df['handicap'] < 0), '1'] = 1,01
+    df.loc[(df['2'] == '-') & (df['handicap'] > 0), '2'] = 30
+    df.loc[(df['1'] == '-') & (df['handicap'] > 0), '1'] = 30
+    df.loc[(df['2'] == '-') & (df['handicap'] < 0), '2'] = 1.01
+
+    
     print(df)
     driver.quit()
     date_new533 = str(datetime.now())
