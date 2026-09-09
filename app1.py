@@ -586,7 +586,8 @@ def pin_all():
     b123=time.time()
     delta1=b123-a123
     name_fun='Pinnacle'
-    
+
+  
     data=[]
     data.append([date_new53,date_new533,delta1,name_fun,many])
     
