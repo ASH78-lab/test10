@@ -565,10 +565,17 @@ def pin_all():
     df = df.loc[df['H'] != '-']
   
     df.loc[df['X'] == '-', 'X'] = 15
-    df.loc[(df['1'] == '-') & (df['handicap'].isin(['-'])), '1'] = 1.01
-    df.loc[(df['2'] == '-') & (~df['handicap'].isin(['-'])), '2'] = 30
-    df.loc[(df['1'] == '-') & (~df['handicap'].isin(['-'])), '1'] = 30
-    df.loc[(df['2'] == '-') & (df['handicap'].isin(['-'])), '2'] = 1.01
+    handicap_str = df['handicap'].astype(str)
+    is_negative = handicap_str.str.startswith('-')
+    is_positive = handicap_str.str.startswith('-')
+    
+
+    df.loc[(df[1] == '-') & is_negative, 1] = '1.01'
+    df.loc[(df[2] == '-') & is_negative, 2] = '30'
+    
+
+    df.loc[(df[1] == '-') & ~is_positive, 1] = '30'
+    df.loc[(df[2] == '-') & ~is_positive, 2] = '1.01'
 
     
     print(df)
