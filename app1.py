@@ -570,12 +570,12 @@ def pin_all():
     is_positive = handicap_str.str.startswith('-')
     
 
-    df.loc[(df[1] == '-') & is_negative, 1] = '1.01'
-    df.loc[(df[2] == '-') & is_negative, 2] = '30'
+    df.loc[(df['1'] == '-') & is_negative, '1'] = '1.01'
+    df.loc[(df['2'] == '-') & is_negative, '2'] = '30'
     
 
-    df.loc[(df[1] == '-') & ~is_positive, 1] = '30'
-    df.loc[(df[2] == '-') & ~is_positive, 2] = '1.01'
+    df.loc[(df['1'] == '-') & ~is_positive, '1'] = '30'
+    df.loc[(df['2'] == '-') & ~is_positive, '2'] = '1.01'
 
     
     print(df)
