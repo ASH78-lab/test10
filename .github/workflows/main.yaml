@@ -29,6 +29,8 @@ jobs:
                 sudo apt-get update
                 sudo apt-get install -y libxml2-dev libxslt1-dev zlib1g-dev
                 pip install lxml
+            - name: Install Dependencies2
+              run:
                 pip install -r requirements.txt 
             - name: Run App
               run: python app1.py    
