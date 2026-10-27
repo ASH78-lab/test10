@@ -7,7 +7,7 @@ name: Daily_bot
 on:
   push:
   schedule: 
-        - cron: '49 00 * * *'
+        - cron: '26 01 * * *'
 env:
     TOKEN1: ${{ secrets.TOKEN1 }}
     TOKEN2: ${{ secrets.TOKEN2 }}
